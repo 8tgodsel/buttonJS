@@ -12,7 +12,7 @@
             <div class="content">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
-            <button onclick="">Night Mode</button>
+            <button onclick="nightmode()">Night Mode</button>
         </section>
 
         <section id="bb2" class="bigbox">
@@ -20,7 +20,7 @@
             <div class="content">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
-            <button onclick="">Toggle Day/Night Mode</button>
+            <button onclick="toggleDay()">Toggle Day/Night Mode</button>
         </section>
 
         <section id="bb3" class="bigbox">
@@ -37,7 +37,7 @@
                     </div>
                 </div>
             </div>
-            <button onclick="">The Family Blood Line</button>
+            <button onclick="blood()">The Family Blood Line</button>
         </section>
 
         <section id="bb4" class="bigbox">
@@ -52,7 +52,7 @@
                     <li class="fish">blue fish</li>
                 </ul>
             </div>
-            <button onclick="">Technicolor Fish</button>
+            <button onclick="doctor()">Technicolor Fish</button>
         </section>
 
         <section id="bb5" class="bigbox">
@@ -61,20 +61,71 @@
                 <span>20</span>
             </div>
             <br>
-            <button onclick="">+1</button>
-            <button onclick="">+10</button>
+            <button onclick="add1()">+1</button>
+            <button onclick="add10()">+10</button>
         </section>
     </body>
     <script type="text/javascript">
         //type your code for each button below the series of comments.  All javascript must be inside the script-tags
         //function 1
+function nightmode(){
+  const doc = document;
+  let section1 = doc.querySelector("#bb1");
+  let subtitle = doc.querySelector("#bb1>h3.subtitle");
+  let para = doc.querySelector("#bb1>div>p");
+  section1.style.backgroundColor="#000000";
+  subtitle.style.color="#ffffff";
+  para.style.color="#ffffff";
+}
 
-        //function 2
+function toggleDay(){
+  const doc=document;
+  let section2 = doc.querySelector("#bb2");
+  section2.classList.toggle("nightmode");
 
+}
         //function 3
+function blood(){
+    const doc=document;
+    let gp=doc.querySelector(".gp")
+    let pops=doc.querySelector(".p")
+    let c =doc.querySelectorAll(".c")
+    gp.style.backgroundColor="#550000";
+    p.style.backgroundColor="#991100";
+    c[0].style.backgroundColor="#dd1111";
+    c[1].style.backgroundColor="#dd1111";
+}
 
         //function 4
-
+function doctor(){
+  const doc=document;
+  let fish=doc.querySelectorAll("#bb4 > div > ul > .fish");
+  let redfish=fish[2];
+  let bluefish=fish[3];
+  redfish.style.color="red";
+  bluefish.style.color="blue";
+  console.log(fish);
+}
         //function 5 & 6
+  function add1(){
+    const doc=document;
+    let span = doc.getElementsByTagName("span");
+    let value = Number(doc.querySelector("span").innerHTML);
+    value++;
+    doc.querySelector("span").innerHTML = value;
+  }
+
+  function add10(){
+    const doc=document;
+    let span = doc.getElementsByTagName("span");
+    let value = Number(doc.querySelector("span").innerHTML);
+    value = value + 10;
+    doc.querySelector("span").innerHTML = value;
+  }
+
+  function random(){
+      const doc = document;
+      
+  }
     </script>
 </html>
